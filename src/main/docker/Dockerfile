@@ -1,6 +1,6 @@
 FROM java:8
 
-RUN in -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone
 
 #将本地文件夹挂载到当前容器
 #VOLUME /tep
