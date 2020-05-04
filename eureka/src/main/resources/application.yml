@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: eureka
+server:
+  servlet:
+    context-path: /
+eureka:
+  server:
+    # 关闭自我保护机制
+    enable-self-preservation: false
+    # 每隔10s扫描服务列表，移除失效服务
+    eviction-interval-timer-in-ms: 10000
+
+  instance:
+    prefer-ip-address: true
+    # 每隔10s发送一次心跳
+    lease-renewal-interval-in-seconds: 10
+    # 告知服务端30秒还未收到心跳的话，就将该服务移除列表
+    lease-expiration-duration-in-seconds: 30
+  #开启健康检查（需要spring-boot-starter-actuator依赖）
+  #client:
+  #  register-with-eureka: false
+  #  fetch-registry: false
